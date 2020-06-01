@@ -22,6 +22,12 @@ const addNewSmurf = e => {
     .post("http://localhost:3333/smurfs", newSmurf)
     .then(res => console.log(res.data))
     .catch(err => console.log(err.data.error.message))
+    setNewSmurf({
+        name: '',
+        age:'',
+        height:'',
+        id:''
+    })
 }
 
     return <div className="App">
