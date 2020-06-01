@@ -12,7 +12,8 @@ import img from '../img/SmurfShroom.jpg'
 const AppDiv = styled.div`
     background-image: url(${img});
     background-size: cover;
-    height: 100vh;
+    background-repeat:repeat-x;
+    /* height: 100%; */
 `
 
 const App = () => {

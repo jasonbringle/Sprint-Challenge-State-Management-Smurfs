@@ -18,23 +18,25 @@ const changeHandler = e => {
 
 const addNewSmurf = e => {
     e.preventDefault();
-    Axios
-    .post("http://localhost:3333/smurfs", newSmurf)
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err.data.error.message))
-    setNewSmurf({
-        name: '',
-        age:'',
-        height:'',
-        id:''
-    })
+    if(newSmurf.name && newSmurf.age && newSmurf.height){
+        Axios
+        .post("http://localhost:3333/smurfs", newSmurf)
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err.data.error.message))
+        setNewSmurf({
+            name: '',
+            age:'',
+            height:'',
+            id:''
+        })
+    }
 }
 
     return <div className="App">
        <form onSubmit={addNewSmurf}>
-            <input type="text" onChange={changeHandler} name="name" value={newSmurf.name} placeholder="Smurf Name"/>
-            <input type="text" onChange={changeHandler} name="age" value={newSmurf.age} placeholder="Smurf Age"/>
-            <input type="text" onChange={changeHandler} name="height" value={newSmurf.height} placeholder="Smurf height"/>
+            <input type="text" onChange={changeHandler} autoComplete='off' name="name" value={newSmurf.name} placeholder="Smurf Name"/>
+            <input type="text" onChange={changeHandler} autoComplete='off' name="age" value={newSmurf.age} placeholder="Smurf Age"/>
+            <input type="text" onChange={changeHandler} autoComplete='off' name="height" value={newSmurf.height} placeholder="Smurf height"/>
             <button>Add New Smurf</button>
         </form>
       </div>

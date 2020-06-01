@@ -4,7 +4,9 @@ import styled from 'styled-components'
 const HeaderDiv = styled.div`
     display: flex;
     justify-content: center;
-    color: rgb(111, 111, 111);
+    color: rgba(0,0,0,1);
+    font-size: 2rem;
+    background-color: white;
 `
 
 const Header = () => {
